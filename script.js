@@ -1,52 +1,48 @@
+window.onload = () => {
+	let button = document.querySelector("#btn");
 
+	// Function for calculating BMI
+	button.addEventListener("click", calculateBMI);
+};
 
-function findbmi() {
+function calculateBMI() {
 
-	var w = document.getElementById("weight").value;
-	var h1 = document.getElementById("heightft").value;
-	var h2 = document.getElementById("heightin").value;
+	/* Getting input from user into height variable.
+	Input is string so typecasting is necessary. */
+	let height = parseInt(document
+			.querySelector("#height").value);
 
-	if (w === '') {
-		alert("Enter weight");
-	} else if (h1 === '') {
-		alert("Enter height in ft");
-	} else if (h2 === '') {
-		alert("Enter height in inches");
-	} else {
+	/* Getting input from user into weight variable.
+	Input is string so typecasting is necessary.*/
+	let weight = parseInt(document
+			.querySelector("#weight").value);
 
-		var temp = (parseInt(h1) * 12 + parseInt(h2));
-		var res = 703 * parseInt(w)/(temp * temp); // 703*(weight/height^2)
-		res = Math.round(100*res)/100; // rounds to nearest hundredth
+	let result = document.querySelector("#result");
 
+	// Checking the user providing a proper
+	// value or not
+	if (height === "" || isNaN(height))
+		result.innerHTML = "Provide a valid Height!";
 
-		document.getElementById("result").innerText = "Your BMI is: " + res;
-		document.getElementById("result").style.display = "block";
+	else if (weight === "" || isNaN(weight))
+		result.innerHTML = "Provide a valid Weight!";
 
-		var suggest = document.getElementById("suggest");
-		if (res < 18.5) {
-			suggest.innerText = "You are underweight :(";
+	// If both input is valid, calculate the bmi
+	else {
 
-			suggest.style.display = "block";
-			
+		// Fixing upto 2 decimal places
+		let bmi = (weight / ((height * height)
+							/ 10000)).toFixed(1);
 
-		} else if (res > 18.5 && res < 24.9) {
-			suggest.innerHTML = "You are normal weight :)";
-			suggest.style.display = "block";
-		} else if (res > 25 && res < 29.9) {
-			suggest.innerHTML = "You are over weight :(";
-			suggest.style.display = "block";
-		} else if (res > 30) {
-			suggest.innerHTML = "You are obese :(";
-			suggest.style.display = "block";
-		} else {
-			suggest.innerHTML = "Did you enter correct measurements?";
-			suggest.style.display = "block";
-		}
+		// Dividing as per the bmi conditions
+		if (bmi < 18.6) result.innerHTML =
+			`Under Weight : <span>${bmi}</span>`;
 
-		//alert("Your BMI is: " + res);
+		else if (bmi >= 18.6 && bmi < 24.9)
+			result.innerHTML =
+				`Normal : <span>${bmi}</span>`;
 
-		document.getElementById("weight").value = "";
-		document.getElementById("heightft").value = "";
-		document.getElementById("heightin").value = "";
-	} 
+		else result.innerHTML =
+			`Over Weight : <span>${bmi}</span>`;
+	}
 }

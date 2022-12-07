@@ -1,31 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
 	
-	<meta charset="UTF-8">
-	<title>BMI Calculator</title>
-	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-	<h1>BMI Calculator</h1>
-	<div id="myDIV" class="header">
-	<form>
-  		<br>Enter Weight: <br>
-  		<input type="number" id="weight" placeholder="Enter weight (in lbs)...">
+   
+	<div class="container">
+		<h1>BMI Calculator</h1>
 
-  		<br><br> Enter Height: <br>
-  		<input type="number" id="heightft" placeholder="feet">
+	    <div class="c1">
+            <p>Height &nbsp;<input type="text1" id="height" placeholder="cm"><br></p>
+         </div><br>
+		
+        <div class="c2">
+            <p>Weight &nbsp;<input type="text2" id="weight" placeholder="kg"></p>
+          </div><br>
+		
 
-		<br><br> Enter Inches: <br>
-  		<input type="number" id="heightin" placeholder="inches">
-	</form>
-  	<span onclick="findbmi()" class="addBtn">Enter weight and height</span>
+		<button id="btn">Calculate</button>		
+        <div id="result"></div>
 	</div>
-	<div class="resultbmi">
-		<h2 id="result"> </h2>
-			<p id="suggest"> </p>
-	</div>
-	<script src="script.js"></script>
-
+    
 </body>
+
 </html>
