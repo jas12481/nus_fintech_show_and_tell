@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	
-	<meta charset="UTF-8">
-	<title>BMI Calculator</title>
-	<link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-	<h1>BMI Calculator</h1>
-	<div id="myDIV" class="header">
-	<form>
-  		<br>Enter Weight: <br>
-  		<input type="number" id="weight" placeholder="Enter weight (in lbs)...">
-
-  		<br><br> Enter Height: <br>
-  		<input type="number" id="heightft" placeholder="feet">
-
-		<br><br> Enter Inches: <br>
-  		<input type="number" id="heightin" placeholder="inches">
-	</form>
-  	<span onclick="findbmi()" class="addBtn">Enter weight and height</span>
-	</div>
-	<div class="resultbmi">
-		<h2 id="result"> </h2>
-			<p id="suggest"> </p>
-	</div>
-	<script src="script.js"></script>
-
+    <div class="container">  
+        <h1>BMI Calculator</h1>
+        <label>
+            <input id="h-input" type="number" placeholder="Enter Your Height in Centimeters: ">
+        </label>        
+        <label>
+            <input id="w-input" type="number" placeholder="Enter Your Weight in Kilogrames: ">
+        </label>            
+        <button type="submit" onclick="Calculate()">Calculate BMI</button>
+            
+        <div class="bmi-value">
+            <h4>BMI Value: </h4>
+            <div id="bmi-output"></div>
+        </div>
+        <div class="status">
+            <h4>Status: </h4>
+            <div id="bmi-status"></div>
+        </div>   
+    </div>
+    
 </body>
 </html>
