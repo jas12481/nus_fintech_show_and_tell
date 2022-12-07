@@ -7,7 +7,7 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(49 46 129);
+  background-color: rgb(184, 16, 175);
   color: rgb(255,255,255)
 }
 
@@ -24,18 +24,17 @@ input{
 }
 
 .underweight{
-  background-color: rgb(255,255,255);
-  color: rgb(0,0,0);
+  background-color: rgb(9, 49, 228);
 }
 
 .healthy{
-  background-color: rgb(101 163 13);
+  background-color: rgb(43, 189, 6);
 }
 
 .overweight{
-  background-color: rgb(225 29 72);
+  background-color: rgb(240, 140, 10);
 }
 
 .obese{
-  background-color: rgb(136 19 55);
+  background-color: rgb(221, 13, 13);
 }
