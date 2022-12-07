@@ -24,7 +24,7 @@ jobs:
     - name: Docker Build & Push Action
       uses: mr-smithers-excellent/docker-build-push@v5.8
       with:
-        image: jonggietechie/nus-show-and-tell
+        image: jas12481/nus_fintech_show_and_tell
         tags: latest
         registry: docker.io
         dockerfile: Dockerfile
